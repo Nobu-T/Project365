@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Project 365</title>
+</head>
+<body>
+<main>
+
+<div id="output_csv">...</div>
+
+  <script>
+var today = new Date();
+var month = today.getMonth() + 1;
+var day = today.getDate();
+var projecttoday = month + '/' + day;
+  
+function getCSV() {
+  var req = new XMLHttpRequest();
+  req.open('get', './project365_2023.csv', true);
+  req.send(null);
+  req.onload = function() {
+    setCSV(req.responseText);
+  };
+}
+
+function setCSV(str) {
+  var data = [];
+  var dataArr;
+  var r = document.getElementById('output_csv');
+  var tmp = str.split('\n');
+
+  var t = '<dl> Today's Project :'+ projecttoday;
+
+  for (let i = 0; i < tmp.length; i++) {
+   if (tmp[i].match(projecttoday)!=null){
+     dataArr = tmp[i].split(',');
+     t += '<dt>' + dataArr[0] + '</dt><dd>' + dataArr[1] + '</dd>';
+   }
+  }
+  t += '</dl>';
+  r.innerHTML = t;
+} 
+  
+getCSV();
+</script>
+
+</main>
+</body>
+</html>
