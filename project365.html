@@ -30,7 +30,7 @@ function setCSV(str) {
   var r = document.getElementById('output_csv');
   var tmp = str.split('\n');
 
-  var t = '<dl> 今日の社会問題 :'+ projecttoday;
+  var t = '<h1><dl> 今日の社会問題 :'+ projecttoday;
 
   for (let i = 0; i < tmp.length; i++) {
    if (tmp[i].match(projecttoday)!=null){
@@ -38,7 +38,7 @@ function setCSV(str) {
      t += '<dt>' + dataArr[1] + '</dt>';
    }
   }
-  t += '</dl>';
+  t += '</dl></h1>';
   r.innerHTML = t;
 } 
   
