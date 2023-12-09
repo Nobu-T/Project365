@@ -13,8 +13,9 @@
 var today = new Date();
 var month = today.getMonth() + 1;
 var day = today.getDate();
-var projecttoday = month + '/' + day;
-  
+//var projecttoday = month + '/' + day;
+var projecttoday = '1/1' ;
+    
 function getCSV() {
   var req = new XMLHttpRequest();
   req.open('get', './project365_2023.csv', true);
