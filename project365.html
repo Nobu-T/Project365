@@ -30,7 +30,7 @@ function setCSV(str) {
   var r = document.getElementById('output_csv');
   var tmp = str.split('\n');
 
-  var t = '<dl> Today's Project :'+ projecttoday;
+  var t = '<dl> Todays Project :'+ projecttoday;
 
   for (let i = 0; i < tmp.length; i++) {
    if (tmp[i].match(projecttoday)!=null){
