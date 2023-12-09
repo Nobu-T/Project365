@@ -36,7 +36,7 @@ function setCSV(str) {
   for (let i = 0; i < tmp.length; i++) {
    if (tmp[i].match(projecttoday)!=null){
      dataArr = tmp[i].split(',');
-     t += '<dt>' + dataArr[0] + '</dt><dd>' + dataArr[1] + '</dd>';
+     t += '<dt>' + dataArr[1] + '</dt>';
    }
   }
   t += '</dl>';
